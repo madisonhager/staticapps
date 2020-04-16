@@ -1,0 +1,22 @@
+{% extends '_layouts/base.njk' %}
+
+{% block page_title %}Ship's log of the future{% endblock %}
+
+{% block page_description %}The search description for this page goes here.{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+      <h1>A Pirate's journey</h1>
+      <p>A Pirate's journey is not easy, but a part of the job and culture.</p>
+      <p>Take a dive in to the life of a man who lives off the water.</p>
+    {% for entry in data.entries %}
+      <h3 class="entry-headline"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+      <p class="entry-date">{{ entry.date }}</p>
+      <hr>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
